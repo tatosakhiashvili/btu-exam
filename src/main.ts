@@ -7,7 +7,7 @@ async function bootstrap() {
   if (process.env.NODE_ENV !== 'production') config();
 
   const app = await NestFactory.create(AppModule);
-  
+
   app.enableCors();
 
   await app.listen(getConfig('PORT') || 3000);
