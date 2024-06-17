@@ -27,23 +27,11 @@ export class UsersService {
     }
 
     delete(id: number) {
-
-        console.log(id);
-        console.log(this.users);
-
-        const index = this.users.findIndex(user => user.id === id);
-
-        console.log(index);
-
+        const index = this.users.findIndex(user => user.id == id);
         if (index !== -1) {
-
-            console.log('x1')
-
             const deletedUser = this.users.splice(index, 1)[0];
             return deletedUser;
         }
-
-        console.log('x2')
         return null;
     }
 }

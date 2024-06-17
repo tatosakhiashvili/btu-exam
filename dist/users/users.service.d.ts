@@ -3,14 +3,22 @@ export declare class UsersService {
     private idCounter;
     findAll(): {
         id: number;
-        name: string;
+        firstName: string;
+        lastName: string;
     }[];
     findOne(id: number): {
         id: number;
-        name: string;
+        firstName: string;
+        lastName: string;
     };
-    create(name: string): {
+    create(firstName: string, lastName: string): {
         id: number;
-        name: string;
+        firstName: string;
+        lastName: string;
+    };
+    delete(id: number): {
+        id: number;
+        firstName: string;
+        lastName: string;
     };
 }

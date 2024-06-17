@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ErrorController = void 0;
 const common_1 = require("@nestjs/common");
 let ErrorController = class ErrorController {
-    findAll() {
-        throw new common_1.BadRequestException('Listing not found');
+    Get() {
+        throw new common_1.BadRequestException('Returning Error');
     }
 };
 __decorate([
@@ -21,7 +21,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], ErrorController.prototype, "findAll", null);
+], ErrorController.prototype, "Get", null);
 ErrorController = __decorate([
     (0, common_1.Controller)('error')
 ], ErrorController);

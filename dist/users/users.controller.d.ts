@@ -4,14 +4,22 @@ export declare class UsersController {
     constructor(usersService: UsersService);
     findAll(): {
         id: number;
-        name: string;
+        firstName: string;
+        lastName: string;
     }[];
     findOne(id: string): {
         id: number;
-        name: string;
+        firstName: string;
+        lastName: string;
     };
-    create(name: string): {
+    create(firstName: string, lastName: string): {
         id: number;
-        name: string;
+        firstName: string;
+        lastName: string;
+    };
+    delete(id: number): {
+        id: number;
+        firstName: string;
+        lastName: string;
     };
 }

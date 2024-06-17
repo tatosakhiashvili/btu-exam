@@ -25,8 +25,11 @@ let UsersController = class UsersController {
     findOne(id) {
         return this.usersService.findOne(Number(id));
     }
-    create(name) {
-        return this.usersService.create(name);
+    create(firstName, lastName) {
+        return this.usersService.create(firstName, lastName);
+    }
+    delete(id) {
+        return this.usersService.delete(id);
     }
 };
 __decorate([
@@ -44,11 +47,19 @@ __decorate([
 ], UsersController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)('name')),
+    __param(0, (0, common_1.Body)('firstName')),
+    __param(1, (0, common_1.Body)('lastName')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "create", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], UsersController.prototype, "delete", null);
 UsersController = __decorate([
     (0, common_1.Controller)('users'),
     __metadata("design:paramtypes", [users_service_1.UsersService])
