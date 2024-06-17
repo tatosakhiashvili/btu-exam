@@ -29,6 +29,7 @@ export class UsersService {
     delete(id: number) {
 
         console.log(id);
+        console.log(this.users);
 
         const index = this.users.findIndex(user => user.id === id);
 
