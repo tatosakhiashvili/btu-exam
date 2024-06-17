@@ -34,4 +34,14 @@ export class UsersService {
         }
         return null;
     }
+
+    update(id: number, firstName: string, lastName: string) {
+        const user = this.users.find(user => user.id == id);
+        if (user) {
+            user.firstName = firstName;
+            user.lastName = lastName;
+            return user;
+        }
+        return null;
+    }
 }
