@@ -21,7 +21,12 @@ export class NewsService {
     }
 
     create(title: string, description: string, category: string, editorFirstName: string, editorLastName: string) {
-        const newNews = { id: this.idCounter++, title, description, category, editorFirstName, editorLastName, likes: 5, dateCreated: new Date(), dateUpdated: new Date() };
+        const newNews = {
+            id: this.idCounter++, title, description, category, editorFirstName, editorLastName,
+            likes: Math.floor(Math.random() * 100),
+            dateCreated: new Date(),
+            dateUpdated: new Date()
+        };
         this.newsList.push(newNews);
         return newNews;
     }
@@ -47,5 +52,17 @@ export class NewsService {
             return news;
         }
         return null;
+    }
+
+    getRandomDate(startDate, endDate) {
+        // Convert the start and end dates to timestamps
+        const startTimestamp = startDate.getTime();
+        const endTimestamp = endDate.getTime();
+
+        // Generate a random timestamp between the start and end timestamps
+        const randomTimestamp = Math.random() * (endTimestamp - startTimestamp) + startTimestamp;
+
+        // Convert the random timestamp back to a date
+        return new Date(randomTimestamp);
     }
 }
